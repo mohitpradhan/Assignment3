@@ -9,9 +9,15 @@ import {ColorpaletteService} from '../colorpalette.service';
 })
 export class ColorpaletteComponent implements OnInit {
 
+  colorpalettesearch:Colorpalette=new Colorpalette();
   colorpalettes:Colorpalette[];
 
   constructor(private colorpaletteservice:ColorpaletteService) { }
+
+  findColor(colorSearch)
+  {
+    this.colorpaletteservice.getColorPalettes(colorSearch).subscribe(data=>this.colorpalettes=data);
+  }
 
   ngOnInit() {
     this.colorpaletteservice.getColorPalettes().subscribe(data=>this.colorpalettes=data);

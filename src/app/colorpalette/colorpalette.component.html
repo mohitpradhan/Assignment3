@@ -1,3 +1,7 @@
+
+<input [(ngModel)]="colorpalettesearch.id">
+<button (click)="findColor(colorpalettesearch)">Get Color Palette</button>
+
 <div *ngFor="let c of colorpalettes">
   <ul>
     <li>Color1 : {{c.color1}}</li>
