@@ -28,7 +28,7 @@ export class ColorpaletteService {
   }
 
   getColorPalettes():Observable<Colorpalette[]>{
-    return this.http.get<Colorpalette[]>('http://api.tkusaka.com/palette_api.php?api_key=5b3549186e29f');
+    return this.http.get<Colorpalette[]>('http://api.tkusaka.com/palette_api.php?api_key=5b3549186e29f').pipe(catchError(this.handleError));
   }
 }
 
