@@ -1,14 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Color Palette</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+<body>
+    <a routerLink="/otherComponent">Other Component</a>
+  <main>
+    <div id="container">
+      <h2 align="center">Welcome to Color Palette</h2>
+    </div>
+    <div id="container" align="center">
+      Enter an ID (1-5) :
+      <input [(ngModel)]="colorpalettesearch.id">
+      <button (click)="findColor(colorpalettesearch)">Get Color Palette</button>
+    </div>
 
-<input [(ngModel)]="colorpalettesearch.id">
-<button (click)="findColor(colorpalettesearch)">Get Color Palette</button>
+    <div *ngFor="let c of colorpalettes" class="container" align="center">
+      <ul align="center" class="list-unstyled">
+        <li class="text-info">Color 1 : {{c.color1}}</li>
+        <li class="text-info">Color 2 : {{c.color2}}</li>
+        <li class="text-info">Color 3 : {{c.color3}}</li>
+        <li class="text-info">ID : {{c.id}}</li>
+        <li class="text-info">IsFavourite : {{c.isFav}}</li>
+        <li class="text-info">Palette Name : {{c.paletteName}}</li>
+      </ul>
+    </div>
 
-<div *ngFor="let c of colorpalettes">
-  <ul>
-    <li>Color1 : {{c.color1}}</li>
-    <li>Color2 : {{c.color2}}</li>
-    <li>Color3 : {{c.color3}}</li>
-    <li>Id : {{c.id}}</li>
-    <li>isFav : {{c.isFav}}</li>
-    <li>Palette Name : {{c.paletteName}}</li>
-  </ul>
-</div>
+  </main>
+</body>
+  
+</html>

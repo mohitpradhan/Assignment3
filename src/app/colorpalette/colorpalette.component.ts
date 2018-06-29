@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Colorpalette} from '../colorpalette';
 import {ColorpaletteService} from '../colorpalette.service';
 
+
 @Component({
   selector: 'app-colorpalette',
   templateUrl: './colorpalette.component.html',
